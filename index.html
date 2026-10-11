@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10151b" />
+    <meta
+      name="description"
+      content="XO AURA — a considered take on the classic game of XO."
+    />
+    <title>XO AURA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/aura-logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-game" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="4"/><path d="M8 10v5M5.5 12.5h5M16 11h.01M18.5 14h.01"/></symbol>
+      <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/><path d="M16 6h4v4"/></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 7h8M16 7h4M4 17h3M11 17h9"/><circle cx="14" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+      <symbol id="icon-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1.2a2.1 2.1 0 0 0 1.5-3.6 1.8 1.8 0 0 1 1.3-3.1H18a3 3 0 0 0 3-3c0-4.6-4-8.3-9-8.3Z"/><path d="M7.5 11h.01M10 7.5h.01M14 7.5h.01"/></symbol>
+      <symbol id="icon-sound-on" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></symbol>
+      <symbol id="icon-sound-off" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></symbol>
+      <symbol id="icon-motion" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/><path d="M3 5h3M18 19h3"/></symbol>
+      <symbol id="icon-motion-off" viewBox="0 0 24 24"><path d="M4 4 20 20"/><path d="M3 12h5l2-5M14 17l1-3h6"/></symbol>
+      <symbol id="icon-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5-10-6.5Z"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7" r="3.5"/><path d="M17 11a3.5 3.5 0 1 0-1-6.9M17 14.5h1a4 4 0 0 1 4 4V20"/></symbol>
+      <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-2.5 4.5 2.5-1-9"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+      <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 11a8 8 0 1 1 2.3 6M4 5v6h6"/></symbol>
+      <symbol id="icon-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h9a7 7 0 0 1 7 7v2"/></symbol>
+      <symbol id="icon-hint" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M8.5 15.5a7 7 0 1 1 7 0c-.8.6-1.2 1.2-1.4 2.5h-4.2c-.2-1.3-.6-1.9-1.4-2.5Z"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="icon-win" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="icon-loss" viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></symbol>
+      <symbol id="icon-draw" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    </svg>
+    <header class="topbar" id="pageTop">
+      <a class="brand" href="#pageTop" aria-label="XO AURA home">
+        <img class="brand-mark" src="images/aura-logo.png" alt="" />
+        <span class="brand-name">AURA</span>
+      </a>
+      <nav class="topnav">
+        <a class="nav-active" href="#game" aria-current="location"><svg class="icon"><use href="#icon-game" /></svg><span>Play</span></a>
+        <a href="#stats"><svg class="icon"><use href="#icon-chart" /></svg><span>Stats</span></a>
+        <a href="#modes"><svg class="icon"><use href="#icon-sliders" /></svg><span>Modes</span></a>
+        <a href="#themes"><svg class="icon"><use href="#icon-palette" /></svg><span>Themes</span></a>
+      </nav>
+      <div class="top-actions">
+        <button
+          id="soundToggle"
+          class="icon-btn"
+          title="Toggle sound"
+          aria-label="Toggle sound"
+        >
+          <svg class="icon" id="soundIcon"><use href="#icon-sound-off" /></svg></button
+        ><button
+          id="themeToggle"
+          class="icon-btn"
+          title="Toggle reduced motion"
+          aria-label="Toggle reduced motion"
+        >
+          <svg class="icon" id="motionIcon"><use href="#icon-motion" /></svg>
+        </button>
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div><b>Aura</b><small><i></i> Ready to play</small></div>
+        </div>
+      </div>
+    </header>
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="profile-card panel">
+          <div class="profile-top">
+            <div class="avatar avatar-large">A</div>
+            <div>
+              <small>WELCOME BACK</small>
+              <h3>Aura <svg class="icon profile-award"><use href="#icon-award" /></svg></h3>
+              <p>Strategist <span class="dot">•</span> Level <b id="level">01</b></p>
+            </div>
+          </div>
+          <div class="xp-line"><span>XP</span><span id="xpLabel">0 / 500</span></div>
+          <div class="progress"><span id="xpBar"></span></div>
+        </section>
+        <nav class="side-nav" aria-label="Game sections">
+          <a class="selected" href="#game"><svg class="icon"><use href="#icon-dashboard" /></svg> Dashboard</a>
+          <a href="#game"><svg class="icon"><use href="#icon-play" /></svg> Play game</a>
+          <a href="#modes"><svg class="icon"><use href="#icon-game" /></svg> Game modes</a>
+          <a href="#stats"><svg class="icon"><use href="#icon-chart" /></svg> Statistics</a>
+          <a href="#themes"><svg class="icon"><use href="#icon-palette" /></svg> Themes</a>
+        </nav>
+        <section class="premium panel">
+          <img class="premium-art" src="images/aura-logo.png" alt="" />
+          <div class="premium-title">AURA <span>PLUS</span></div>
+          <p>More themes, more style. Make the board your own.</p>
+          <button class="outline-btn" id="premiumBtn">Explore features <svg class="icon"><use href="#icon-arrow" /></svg></button>
+          <small class="muted">All game modes are free to play.</small>
+        </section>
+        <div class="sidebar-footer">PLAY. THINK. WIN.<span>— &nbsp; X O A U R A &nbsp; —</span></div>
+      </aside>
+      <section class="center-column">
+        <section class="game-panel panel" id="game">
+          <div class="game-intro">
+            <p class="eyebrow">A CLASSIC, WELL PLAYED</p>
+            <h1>Three in a row.</h1>
+            <p class="intro-copy">Your move, whenever you're ready.</p>
+          </div>
+          <div class="match-head">
+            <div class="player">
+              <div class="symbol-box x-box">×</div>
+              <div><b>You</b><small>GOES FIRST</small></div>
+            </div>
+            <div class="versus">VS</div>
+            <div class="player player-right">
+              <div>
+                <b id="opponentName">Aura AI</b
+                ><small id="opponentLabel">COMPUTER · PRO</small>
+              </div>
+              <div class="symbol-box o-box">○</div>
+            </div>
+          </div>
+          <div class="turn-row">
+            <div class="turn-status">
+              <span class="live-dot"></span
+              ><span id="statusText" aria-live="polite"
+                >Your turn — make a move</span
+              >
+            </div>
+            <span class="round-pill" id="roundPill">ROUND 01</span>
+          </div>
+          <div class="board-wrap">
+            <div
+              class="board"
+              id="board"
+              role="grid"
+              aria-label="Tic tac toe board"
+            >
+              <button
+                class="cell"
+                data-cell="0"
+                role="gridcell"
+                aria-label="Row 1 column 1"
+              ></button
+              ><button
+                class="cell"
+                data-cell="1"
+                role="gridcell"
+                aria-label="Row 1 column 2"
+              ></button
+              ><button
+                class="cell"
+                data-cell="2"
+                role="gridcell"
+                aria-label="Row 1 column 3"
+              ></button>
+              <button
+                class="cell"
+                data-cell="3"
+                role="gridcell"
+                aria-label="Row 2 column 1"
+              ></button
+              ><button
+                class="cell"
+                data-cell="4"
+                role="gridcell"
+                aria-label="Row 2 column 2"
+              ></button
+              ><button
+                class="cell"
+                data-cell="5"
+                role="gridcell"
+                aria-label="Row 2 column 3"
+              ></button>
+              <button
+                class="cell"
+                data-cell="6"
+                role="gridcell"
+                aria-label="Row 3 column 1"
+              ></button
+              ><button
+                class="cell"
+                data-cell="7"
+                role="gridcell"
+                aria-label="Row 3 column 2"
+              ></button
+              ><button
+                class="cell"
+                data-cell="8"
+                role="gridcell"
+                aria-label="Row 3 column 3"
+              ></button>
+              <svg
+                class="win-line"
+                id="winLine"
+                viewBox="0 0 300 300"
+                aria-hidden="true"
+              >
+                <line x1="0" y1="0" x2="0" y2="0" />
+              </svg>
+            </div>
+          </div>
+          <div class="game-controls">
+            <button class="primary-btn" id="newGame">
+              <svg class="icon"><use href="#icon-reset" /></svg> New game</button
+            ><button class="secondary-btn" id="undoBtn" disabled>
+              <svg class="icon"><use href="#icon-undo" /></svg> Undo</button
+            ><button class="secondary-btn" id="hintBtn">
+              <svg class="icon"><use href="#icon-hint" /></svg> Hint <kbd>H</kbd>
+            </button>
+          </div>
+          <div class="game-foot">
+            <span><span class="mini-dot"></span> LOCAL GAME</span
+            ><span id="modeCaption">CLASSIC · 3 × 3</span>
+            <div class="game-foot-difficulty">
+              <span class="field-label" id="difficultyLabel">COMPUTER LEVEL</span>
+              <div class="difficulty" id="difficulty" role="group" aria-labelledby="difficultyLabel">
+                <button data-difficulty="easy">Easy</button
+                ><button data-difficulty="medium">Medium</button
+                ><button class="active" data-difficulty="hard">Pro</button>
+              </div>
+              <span id="difficultyValue" aria-live="polite">PRO</span>
+            </div>
+          </div>
+        </section>
+        <section class="history-panel panel" id="history">
+          <div class="section-heading">
+            <div>
+              <svg class="icon heading-icon"><use href="#icon-clock" /></svg>
+              <h2>Recent matches</h2>
+            </div>
+            <button class="text-btn" id="clearHistory">
+              Clear <svg class="icon"><use href="#icon-trash" /></svg>
+            </button>
+          </div>
+          <div id="historyList" class="history-list">
+            <div class="empty-history">
+                Finished games will show up here.
+            </div>
+          </div>
+        </section>
+      </section>
+      <aside class="right-column">
+        <section class="stats-panel panel" id="stats">
+          <div class="section-heading">
+            <div>
+              <svg class="icon heading-icon cyan"><use href="#icon-chart" /></svg>
+              <h2>Match statistics</h2>
+            </div>
+            <span class="live-label">ON THIS DEVICE</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <small>Games played</small><strong id="gamesStat">0</strong
+              ><span class="stat-note">TOTAL MATCHES</span>
+            </div>
+            <div class="stat-card stat-win">
+              <small>Victories</small><strong id="winsStat">0</strong
+              >              <span class="stat-note">MATCHES WON</span>
+            </div>
+            <div class="stat-card">
+              <small>Defeats</small><strong id="lossesStat">0</strong
+              >              <span class="stat-note">MATCHES LOST</span>
+            </div>
+            <div class="stat-card">
+              <small>Draws</small><strong id="drawsStat">0</strong
+              >              <span class="stat-note">NO WINNER</span>
+            </div>
+          </div>
+          <div class="winrate">
+            <div><span>Win rate</span><b id="winRate">—</b></div>
+            <div class="progress"><span id="winRateBar"></span></div>
+          </div>
+        </section>
+        <section class="settings-panel panel" id="modes">
+          <div class="section-heading">
+            <div>
+              <svg class="icon heading-icon"><use href="#icon-sliders" /></svg>
+              <h2>Game setup</h2>
+            </div>
+          </div>
+          <label class="field-label">MATCH MODE</label>
+          <div class="mode-grid">
+            <button class="mode-card active" data-mode="classic">
+              <span class="mode-icon"><svg class="icon"><use href="#icon-game" /></svg></span
+              ><span><b>Classic</b><small>Traditional 3×3</small></span
+              ><span class="check"><svg class="icon"><use href="#icon-check" /></svg></span></button
+            ><button class="mode-card" data-mode="quick">
+              <span class="mode-icon"><svg class="icon"><use href="#icon-reset" /></svg></span
+              ><span><b>Quick match</b><small>Shorter reply time</small></span
+              ><span class="check"><svg class="icon"><use href="#icon-check" /></svg></span></button
+            ><button class="mode-card" data-mode="zen">
+              <span class="mode-icon"><svg class="icon"><use href="#icon-motion" /></svg></span
+              ><span><b>Zen mode</b><small>Take your time</small></span
+              ><span class="check"><svg class="icon"><use href="#icon-check" /></svg></span></button
+            ><button class="mode-card" data-mode="two">
+              <span class="mode-icon"><svg class="icon"><use href="#icon-users" /></svg></span
+              ><span
+                ><b>Local 2-player</b><small>Play with a friend</small></span
+              ><span class="check"><svg class="icon"><use href="#icon-check" /></svg></span>
+            </button>
+          </div>
+          <div class="settings-divider"></div>
+          <div class="setting-title" id="themes">
+            <label class="field-label">COLOUR THEMES</label>
+            <button class="text-btn" id="cycleTheme">Shuffle themes <svg class="icon"><use href="#icon-reset" /></svg></button>
+          </div>
+          <div class="theme-grid">
+            <button
+              class="theme-swatch active"
+              data-theme="nebula"
+              aria-label="Nebula theme"
+            >
+              <span class="swatch-art nebula" aria-hidden="true">
+                <img class="swatch-logo" src="images/aura-logo.png" alt="" />
+              </span
+              ><small>Nebula</small></button
+            ><button
+              class="theme-swatch"
+              data-theme="arctic"
+              aria-label="Arctic theme"
+            >
+              <span class="swatch-art arctic" aria-hidden="true">
+                <img class="swatch-logo" src="images/aura-logo.png" alt="" />
+              </span
+              ><small>Arctic</small></button
+            ><button
+              class="theme-swatch"
+              data-theme="matrix"
+              aria-label="Matrix theme"
+            >
+              <span class="swatch-art matrix" aria-hidden="true">
+                <img class="swatch-logo" src="images/aura-logo.png" alt="" />
+              </span
+              ><small>Matrix</small></button
+            ><button
+              class="theme-swatch"
+              data-theme="ember"
+              aria-label="Ember theme"
+            >
+              <span class="swatch-art ember" aria-hidden="true">
+                <img class="swatch-logo" src="images/aura-logo.png" alt="" />
+              </span><small>Ember</small></button
+            ><button
+              class="theme-swatch"
+              data-theme="ultraviolet"
+              aria-label="Ultraviolet theme"
+            >
+              <span class="swatch-art ultraviolet" aria-hidden="true">
+                <img class="swatch-logo" src="images/aura-logo.png" alt="" />
+              </span><small>Ultraviolet</small>
+            </button>
+          </div>
+        </section>
+        <section class="promo panel">
+          <img class="promo-orb" src="images/aura-logo.png" alt="" />
+          <div class="promo-kicker">YOUR NEXT MOVE</div>
+          <h2>Think ahead.</h2>
+          <p>Every board is a new puzzle. Start a fresh round whenever you're ready.</p>
+          <button class="primary-btn promo-btn" id="promoPlay">
+            Start a match <svg class="icon"><use href="#icon-arrow" /></svg>
+          </button>
+          <div class="promo-decoration">AURA / 001</div>
+        </section>
+      </aside>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section
+        class="modal panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg class="icon"><use href="#icon-close" /></svg>
+        </button>
+        <div class="modal-symbol" id="modalSymbol"><svg class="icon"><use href="#icon-win" /></svg></div>
+        <p class="eyebrow">MATCH COMPLETE</p>
+        <h2 id="modalTitle">You won.</h2>
+        <p id="modalMessage">Good game.</p>
+        <div class="modal-actions">
+          <button class="primary-btn" id="modalNewGame">
+            Play again <svg class="icon"><use href="#icon-reset" /></svg></button
+          ><button class="secondary-btn" id="modalDismiss">Review board</button>
+        </div>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
